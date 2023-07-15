@@ -15,6 +15,8 @@ public class Pizza {
     protected boolean extraToppings;
     private boolean bag;
 
+    private boolean billGenerator;
+
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
         // your code goes here
@@ -35,6 +37,7 @@ public class Pizza {
          extraCheese=false;
          extraToppings=false;
          bag=false;
+         billGenerator=false;
 
     }
 
@@ -75,22 +78,23 @@ public class Pizza {
 
     public String getBill(){
         // your code goes here
-      StringBuilder ans = new StringBuilder();
-      ans.append("Base Price Of The Pizza: ").append(price).append("\n");
-      if(extraCheese==true)
-      {
-          ans.append("Extra Cheese Added: ").append(80).append("\n");
+        StringBuilder ans = new StringBuilder();
+      if(billGenerator==false) {
+
+          billGenerator = true;
+          ans.append("Base Price Of The Pizza: ").append(price).append("\n");
+          if (extraCheese == true) {
+              ans.append("Extra Cheese Added: ").append(80).append("\n");
+          }
+          if (extraToppings == true) {
+              int toppings = isVeg ? 70 : 120;
+              ans.append("Extra Toppings Added: ").append(toppings).append("\n");
+          }
+          if (bag == true) {
+              ans.append("Paperbag Added: ").append(20).append("\n");
+          }
+          ans.append("Total Price: ").append(bill).append("\n");
       }
-     if(extraToppings==true)
-     {
-         int toppings = isVeg? 70 : 120;
-         ans.append("Extra Toppings Added: ").append(toppings).append("\n");
-     }
-     if(bag == true)
-     {
-         ans.append("Paperbag Added: ").append(20).append("\n");
-     }
-     ans.append("Total Price: ").append(bill).append("\n");
      return ans.toString();
 
 
