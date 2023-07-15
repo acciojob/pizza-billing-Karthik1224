@@ -30,6 +30,7 @@ public class Pizza {
              toppings = 120;
              bill = price;
          }
+         cheese = 80;
          paperbag = 20;
          extraCheese=false;
          extraToppings=false;
