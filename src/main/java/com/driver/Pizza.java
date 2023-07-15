@@ -6,6 +6,11 @@ public class Pizza {
     private Boolean isVeg;
     private Integer bill;
 
+    private Integer cheese;
+    private Integer paperbag;
+
+    private Integer toppings;
+
     protected boolean extraCheese;
     protected boolean extraToppings;
     private boolean bag;
@@ -16,13 +21,16 @@ public class Pizza {
          if(isVeg == true)
          {
              price = 300;
+             toppings = 70;
              bill = price;
          }
          else
          {
              price = 400;
+             toppings = 120;
              bill = price;
          }
+         paperbag = 20;
          extraCheese=false;
          extraToppings=false;
          bag=false;
@@ -37,31 +45,30 @@ public class Pizza {
 
     public void addExtraCheese() {
         // your code goes here
-        bill += 80;
-        extraCheese = true;
+       if(extraCheese==false)
+       {
+           bill += cheese;
+           extraCheese = true;
+       }
     }
 
     public void addExtraToppings(){
         // your code goes here
-        if(isVeg==true)
-        {
-            bill += 70;
-
-        }
-        else
-        {
-            bill += 120;
-
-        }
-
-        extraToppings = true;
+       if(extraToppings == false)
+       {
+           bill += toppings;
+           extraToppings = true;
+       }
 
     }
 
     public void addTakeaway(){
         // your code goes here
-        bill += 20;
-        bag = true;
+        if(bag==false)
+        {
+            bill += paperbag;
+            bag = true;
+        }
 
     }
 
