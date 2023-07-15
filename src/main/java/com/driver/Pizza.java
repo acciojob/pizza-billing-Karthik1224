@@ -23,6 +23,9 @@ public class Pizza {
              price = 400;
              bill = price;
          }
+         extraCheese=false;
+         extraToppings=false;
+         bag=false;
        //System.out.println("Base Price Of The Pizza: "+price);
     }
 
