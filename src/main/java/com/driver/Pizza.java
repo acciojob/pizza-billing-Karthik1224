@@ -19,7 +19,7 @@ public class Pizza {
              price = 400;
              bill = 400;
          }
-        System.out.println("Base Price Of The Pizza: "+price);
+       //System.out.println("Base Price Of The Pizza: "+price);
     }
 
     public int getPrice()
@@ -38,7 +38,7 @@ public class Pizza {
           {
               bill += 80;
           }
-        System.out.println("Extra Cheese Added: "+80);
+        //System.out.println("Extra Cheese Added: "+80);
     }
 
     public void addExtraToppings(){
@@ -46,12 +46,12 @@ public class Pizza {
         if(isVeg==true)
         {
             bill += 70;
-            System.out.println("Extra Toppings Added: "+70);
+            //System.out.println("Extra Toppings Added: "+70);
         }
         else
         {
             bill += 120;
-            System.out.println("Extra Toppings Added: "+120);
+            //System.out.println("Extra Toppings Added: "+120);
         }
 
     }
@@ -59,7 +59,7 @@ public class Pizza {
     public void addTakeaway(){
         // your code goes here
         bill += 20;
-        System.out.println("Paperbag Added: "+20);
+        //System.out.println("Paperbag Added: "+20);
     }
 
     public String getBill(){
